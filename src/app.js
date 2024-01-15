@@ -6,7 +6,7 @@ const Tool = require("./models/moviesschema");
 const routes = require('./routes/tool');
 const app = express();
 app.use(express.json());
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 
 app.get("/", async (req, res) => {
