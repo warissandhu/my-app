@@ -1,12 +1,12 @@
 const express = require('express');
-const Tool = require('../models/tools');
+const Tool = require('../models/moviesschema');
 const mongoose = require("mongoose");
 const router = express.Router();
 
 router.get ('/:slug', async(req,res)=>{
   const tools = await Tool.findOne({slug:req.params.slug})
   if(tools==null){res.redirect('/')}
-  res.render('tools', {tools:tools})
+  res.render('movies', {tools:tools})
 })
 
 router.post('/',(req,res)=>{

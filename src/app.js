@@ -2,8 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const path = require('path');
 require("./db/conn");
-const Tut = require("./models/details");
-const Tool = require("./models/tools");
+const Tool = require("./models/moviesschema");
 const routes = require('./routes/tool');
 const app = express();
 app.use(express.json());
@@ -49,7 +48,7 @@ app.get("/privacy-policy", (req, res)=>{
   res.render("privacypolicy");
 })
 
-app.use("/tools", routes)
+app.use("/movies", routes)
 
 app.listen(port, () =>{
   console.log(`Listening on port ${port}`)
